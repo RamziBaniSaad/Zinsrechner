@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Popper.js und Bootstrap JS in einem Paket -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+    <title>Zinsrechner</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Zinsrechner</h1>
+      <hr>
+      <h3>Berechnen Sie Ihr Endkapital!</h3>
+
+      <div class="row">
+        <div id="input" class="offset-sm-2 col-sm-8">
+          <form>
+
+            <label>Startkapital</label>
+            <p>erste investition</p>
+            <div class="input-group">
+              <input class="form-control" type="number" placeholder="Startkapital" id="startkapital">
+              <span class="input-group-text">&euro;</span>
+            </div>
+
+            <label>Sparrate</label>
+            <p>sparintervall - monatlich</p>
+            <div class="input-group">
+              <input class="form-control" type="number" placeholder="In Produktion" id="sparrate" disabled>
+              <span class="input-group-text">&euro;</span>
+              
+            </div>
+
+            <label>Zinssatz</label>
+            <p>zinsperiode - jährlich</p>
+            <div class="input-group">
+              <input class="form-control" type="number" placeholder="Zinssatz" id="zinssatz">
+              <span class="input-group-text">&percnt;</span>
+            </div>
+
+            <label>Laufzeit</label>
+            <p>zeiteinheit - jahre, monate oder tage</p>
+            <div class="input-group mb-5">
+            <input class="form-control" type="number" placeholder="Laufzeit" id="laufzeit">
+            <select class="form-select bg-light" id="zeiteinheit">
+              <option selected>Jahre</option>
+              <option>Monate</option>
+              <option>Tage</option>
+            </select>
+            </div>
+          
+            <div class="row">
+              <div class="form-check col-6">
+                  <input type="radio" name="radio" class="form-check-input radio-input" id="zinseszinsen" value="1">
+                  <label class="radio-label">Zinseszinsen</label>
+              </div>
+              <div class="form-check col-6">
+                  <input type="radio" name="radio" class="form-check-input radio-input" id="einfacheZinsen" value="2">
+                  <label class="radio-label">Einfache Zinsen</label>
+              </div>
+            </div>
+          </form>
+        </div>
+
+        <div id="berechnung" class="offset-sm-2 col-sm-8">
+          <button type="button" class="btn btn-outline-light mb-5 w-100" id="berechnen">Berechnen</button>
+        </div>
+        
+        <div id="output" class="offset-sm-2 col-sm-8">
+          <div class="card mb-2" style="width: 20rem;">
+            <div class="card-header">Ihr Endkapital beträgt</div>
+            <div class="card-body">
+                <h4 class="card-title"><span id="endkapital">0</span>&euro;</h4>
+                <h5 class="card-subtitle text-muted mb-2"><span id="zinsen">0</span>&euro; Zinsen</h5>
+            </div>
+            <div class="card-footer text-muted">Startkapital um <span id="steigung">0</span>&percnt; gestiegen</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!------------notwendig-------------->
+    
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
+    
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+
+  </body>
+</html>
